@@ -1,0 +1,247 @@
+﻿{
+  "generated_at": "2026-06-08 21:23:50",
+  "real_sources": [
+    [
+      "main result summary",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\main_results_summary.csv"
+    ],
+    [
+      "Springer Nature template zip",
+      "<PROJECT_ROOT>\\manuscript_diffusion_network_v1\\springer_template\\springer-nature-latex-template-december-2024.zip"
+    ],
+    [
+      "main figure fig1_framework_overview.pdf",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure1_overview.pdf"
+    ],
+    [
+      "main figure fig1_framework_overview.png",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure1_overview.png"
+    ],
+    [
+      "main figure fig1_framework_overview.svg",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure1_overview.svg"
+    ],
+    [
+      "main figure fig2_migration_path_atlas.pdf",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure2_atlas.pdf"
+    ],
+    [
+      "main figure fig2_migration_path_atlas.png",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure2_atlas.png"
+    ],
+    [
+      "main figure fig2_migration_path_atlas.svg",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure2_atlas.svg"
+    ],
+    [
+      "main figure fig3_local_bottleneck_physics.pdf",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure3_local_descriptors.pdf"
+    ],
+    [
+      "main figure fig3_local_bottleneck_physics.png",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure3_local_descriptors.png"
+    ],
+    [
+      "main figure fig3_local_bottleneck_physics.svg",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure3_local_descriptors.svg"
+    ],
+    [
+      "main figure fig4_no_leakage_path_ranking.pdf",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure4_prediction.pdf"
+    ],
+    [
+      "main figure fig4_no_leakage_path_ranking.png",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure4_prediction.png"
+    ],
+    [
+      "main figure fig4_no_leakage_path_ranking.svg",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure4_prediction.svg"
+    ],
+    [
+      "main figure fig5_topology_network_readout.pdf",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure5_network.pdf"
+    ],
+    [
+      "main figure fig5_topology_network_readout.png",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure5_network.png"
+    ],
+    [
+      "main figure fig5_topology_network_readout.svg",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure5_network.svg"
+    ],
+    [
+      "main figure fig6_active_neb_selection.pdf",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure6_targeted_neb.pdf"
+    ],
+    [
+      "main figure fig6_active_neb_selection.png",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure6_targeted_neb.png"
+    ],
+    [
+      "main figure fig6_active_neb_selection.svg",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\fig_main\\Figure6_targeted_neb.svg"
+    ],
+    [
+      "table main_results_summary.csv",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\main_results_summary.csv"
+    ],
+    [
+      "table figure2_database_atlas_statistics.csv",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\data_cache\\figure2_database_atlas_statistics.csv"
+    ],
+    [
+      "table figure3_local_descriptor_importance.csv",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\data_cache\\figure3_local_descriptor_importance.csv"
+    ],
+    [
+      "table figure3_quartile_descriptor_effect_size.csv",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\data_cache\\figure3_quartile_descriptor_effect_size.csv"
+    ],
+    [
+      "table model_family_grouped_cv_metrics.csv",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\data_cache\\model_family_grouped_cv_metrics.csv"
+    ],
+    [
+      "table machine_learning_models_attempted.csv",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\data_cache\\machine_learning_models_attempted.csv"
+    ],
+    [
+      "table Figure5_case_summary.csv",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\data_cache\\Figure5_case_summary.csv"
+    ],
+    [
+      "table Figure5_critical_edge_removal_response.csv",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\data_cache\\Figure5_critical_edge_removal_response.csv"
+    ],
+    [
+      "table Figure6_top5_recommended_candidates.csv",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\data_cache\\Figure6_top5_recommended_candidates.csv"
+    ],
+    [
+      "table Figure6_score_ablation.csv",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\data_cache\\Figure6_score_ablation.csv"
+    ],
+    [
+      "table external_database_validation_summary.csv",
+      "<PROJECT_ROOT>\\SI_external_database_validation_20260608\\tables\\external_database_validation_summary.csv"
+    ],
+    [
+      "table kim_antiperovskite_descriptor_barrier_correlations.csv",
+      "<PROJECT_ROOT>\\SI_external_database_validation_20260608\\tables\\kim_antiperovskite_descriptor_barrier_correlations.csv"
+    ],
+    [
+      "table current_predicted_Li_networks_external_chemsys_overlap.csv",
+      "<PROJECT_ROOT>\\SI_external_database_validation_20260608\\tables\\current_predicted_Li_networks_external_chemsys_overlap.csv"
+    ],
+    [
+      "Fig. S2 descriptor correlation",
+      "<PROJECT_ROOT>\\npj_no_leakage_diffusion_network_20260604\\results\\tables\\migration_path_atlas_edges.csv"
+    ],
+    [
+      "Fig. S4 descriptor distributions",
+      "<PROJECT_ROOT>\\npj_paper_figures_20260604\\si_figures\\figS4_descriptor_distributions.png"
+    ],
+    [
+      "Fig. S4 descriptor distributions pdf",
+      "<PROJECT_ROOT>\\npj_paper_figures_20260604\\si_figures\\figS4_descriptor_distributions.pdf"
+    ],
+    [
+      "Fig. S5 grouped CV",
+      "<PROJECT_ROOT>\\npj_paper_figures_20260604\\si_figures\\figS1_no_leakage_feature_policy.png"
+    ],
+    [
+      "Fig. S5 grouped CV pdf",
+      "<PROJECT_ROOT>\\npj_paper_figures_20260604\\si_figures\\figS1_no_leakage_feature_policy.pdf"
+    ],
+    [
+      "Fig. S6 model robustness",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\data_cache\\model_family_grouped_cv_metrics.csv"
+    ],
+    [
+      "Fig. S7 descriptor importance",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\data_cache\\figure3_local_descriptor_importance.csv"
+    ],
+    [
+      "Fig. S8 external consistency",
+      "<PROJECT_ROOT>\\SI_external_database_validation_20260608\\figures\\SI_external_database_validation.png"
+    ],
+    [
+      "Fig. S8 external consistency pdf",
+      "<PROJECT_ROOT>\\SI_external_database_validation_20260608\\figures\\SI_external_database_validation.pdf"
+    ],
+    [
+      "Fig. S9 case study networks",
+      "<PROJECT_ROOT>\\model_predicted_unidentified_networks_20260608\\figures\\model_predicted_unidentified_networks_support.png"
+    ],
+    [
+      "Fig. S9 case study networks pdf",
+      "<PROJECT_ROOT>\\model_predicted_unidentified_networks_20260608\\figures\\model_predicted_unidentified_networks_support.pdf"
+    ],
+    [
+      "Fig. S10 active-learning sensitivity",
+      "<PROJECT_ROOT>\\paper_figures_pub_v2\\data_cache\\Figure6_strategy_hit_rate_curves.csv"
+    ]
+  ],
+  "placeholders": [
+    [
+      "Fig. S1 schematic",
+      "generated workflow schematic"
+    ],
+    [
+      "Fig. S3",
+      "species/barrier columns missing"
+    ],
+    [
+      "Fig. S11 schematic",
+      "feature policy schematic"
+    ],
+    [
+      "Fig. S12 schematic",
+      "limitations summary"
+    ]
+  ],
+  "reference_count": 45,
+  "failed_reference_fetches": [
+    [
+      "sendek2017screening",
+      "10.1039/C7EE02697D",
+      "404: <!DOCTYPE html>\n<html lang=\"en-us\">\n<head>\n\n    <meta charset=\"UTF-8\">\n    <meta"
+    ],
+    [
+      "cavd2020database",
+      "10.1038/s41597-020-00734-y",
+      "404: <!DOCTYPE html>\n<html lang=\"en-us\">\n<head>\n\n    <meta charset=\"UTF-8\">\n    <meta"
+    ],
+    [
+      "willems2012zeopp",
+      "10.1021/cm200890w",
+      "404: <!DOCTYPE html>\n<html lang=\"en-us\">\n<head>\n\n    <meta charset=\"UTF-8\">\n    <meta"
+    ],
+    [
+      "vanderVen2000licoo2",
+      "10.1103/PhysRevB.62.297",
+      "404: <!DOCTYPE html>\n<html lang=\"en-us\">\n<head>\n\n    <meta charset=\"UTF-8\">\n    <meta"
+    ],
+    [
+      "deng2015sse",
+      "10.1039/C5EE03821K",
+      "404: <!DOCTYPE html>\n<html lang=\"en-us\">\n<head>\n\n    <meta charset=\"UTF-8\">\n    <meta"
+    ],
+    [
+      "zimmermann2020localenv",
+      "10.1038/s41524-020-00451-w",
+      "404: <!DOCTYPE html>\n<html lang=\"en-us\">\n<head>\n\n    <meta charset=\"UTF-8\">\n    <meta"
+    ],
+    [
+      "ke2017lightgbm",
+      "10.5555/3294996.3295074",
+      "404: <!DOCTYPE html>\n<html lang=\"en-us\">\n<head>\n\n    <meta charset=\"UTF-8\">\n    <meta"
+    ],
+    [
+      "prokhorenkova2018catboost",
+      "10.5555/3327757.3327770",
+      "404: <!DOCTYPE html>\n<html lang=\"en-us\">\n<head>\n\n    <meta charset=\"UTF-8\">\n    <meta"
+    ]
+  ]
+}
+
