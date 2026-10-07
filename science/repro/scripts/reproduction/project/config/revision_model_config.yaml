@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.0",
+  "pipeline_name": "revision_no_leakage_barrier_model",
+  "inputs": {
+    "provenance_csv": "tables/revision_source_data/labeled_edges_provenance.csv",
+    "raw_json": "../00_raw/scidata2025/EM-COMPLETE-DATASET.json",
+    "periodic_candidate_edges_csv": "tables/revision_source_data/periodic_trial_edges.csv",
+    "periodic_candidate_nodes_csv": "tables/revision_source_data/periodic_trial_nodes.csv",
+    "periodic_reported_paths_csv": "tables/revision_source_data/periodic_trial_reported_paths.csv",
+    "expected_raw_sha256": "fe8347abbbdb6d941805f645b7d5651eb919ecd3649c12f44535b948a737d8cd",
+    "expected_provenance_sha256": "480dca359cd71946cb174138808a5cdef1bfa56f8459c50f4e8e0de1be60a9e9",
+    "expected_record_count": 619,
+    "legacy_prediction_inputs_allowed": false
+  },
+  "cohorts": {
+    "strict_local": {
+      "require_fixed_cell": true,
+      "require_single_mover": true,
+      "lattice_relative_tolerance": 1e-10,
+      "minimum_mover_displacement_A": 1e-6,
+      "expected_record_count": 468,
+      "purpose": "Primary four-block model with reliable reported-edge geometry"
+    },
+    "composition_all619": {
+      "expected_record_count": 619,
+      "purpose": "Composition-only sensitivity; never merged with strict-local performance"
+    }
+  },
+  "element_properties": {
+    "provider": "bokeh.sampledata.periodic_table.elements",
+    "provider_version": "0.13.0",
+    "neutral_properties_only": true,
+    "forbid_assumed_oxidation_states": true,
+    "forbid_shannon_radius_without_oxidation_and_coordination": true
+  },
+  "featurizer": {
+    "path_sample_count": 17,
+    "local_neighbor_count": 12,
+    "crowding_log_scale_A": 1.0,
+    "minimum_image_tie_tolerance_A": 1e-8,
+    "candidate_start_match_tolerance_A": 0.01,
+    "feature_blocks": [
+      "A_composition",
+      "B_local_geometry",
+      "C_local_chemistry",
+      "D_occupancy_dopant_configuration"
+    ],
+    "main_feature_set": "A+B+C+D",
+    "topology_default_in_main_model": false,
+    "topology_ablation_policy": "blocked unless candidate nodes and edges are label-independent for the full strict cohort",
+    "straight_path_proxy_warning": "Raw data contain endpoints only, not NEB saddle images; clearance and bottleneck fields are straight-line proxies."
+  },
+  "validation": {
+    "primary_model_selection": {
+      "id": "leave_formula_plus_migrating_species_out",
+      "splitter": "GroupKFold",
+      "outer_splits": 5,
+      "inner_splits": 4,
+      "group_column": "formula_species_group"
+    },
+    "stress_tests": [
+      {
+        "id": "leave_source_out",
+        "splitter": "LeaveOneGroupOut",
+        "group_column": "source_group"
+      },
+      {
+        "id": "leave_structure_family_out",
+        "splitter": "LeaveOneGroupOut",
+        "group_column": "structure_family_normalized",
+        "group_definition": "Normalized reported crystal_class; a traceable metadata proxy, not a structure-clustering result"
+      },
+      {
+        "id": "leave_NASICON_composition_out",
+        "splitter": "NASICONCompositionLOGO",
+        "group_column": "formula_species_group",
+        "scope_filter": "is_nasicon == 1",
+        "minimum_publishable_records": 20,
+        "minimum_publishable_groups": 10,
+        "minimum_publishable_species": 3,
+        "minimum_publishable_sources": 3
+      },
+      {
+        "id": "leave_migrating_species_out",
+        "splitter": "LeaveOneGroupOut",
+        "group_column": "migrating_species"
+      }
+    ]
+  },
+  "selection_rule": {
+    "eligible_cohort": "strict_local",
+    "eligible_feature_set": "A+B+C+D",
+    "eligible_validation": "leave_formula_plus_migrating_species_out",
+    "rank_by": [
+      "MAE_eV:min",
+      "RMSE_eV:min",
+      "Spearman_rho:max",
+      "model_id:lexical"
+    ],
+    "stress_metrics_must_not_influence_selection": true
+  },
+  "models": {
+    "DummyMean": {},
+    "SVR": {
+      "C": 10.0,
+      "epsilon": 0.05,
+      "gamma": "scale"
+    },
+    "ExtraTrees": {
+      "n_estimators": 200,
+      "min_samples_leaf": 2,
+      "max_features": 0.7,
+      "n_jobs": 1
+    },
+    "RandomForest": {
+      "n_estimators": 200,
+      "min_samples_leaf": 2,
+      "max_features": 0.7,
+      "n_jobs": 1
+    },
+    "HistGradientBoosting": {
+      "max_iter": 120,
+      "learning_rate": 0.05,
+      "max_leaf_nodes": 31,
+      "l2_regularization": 0.1
+    },
+    "XGBoost": {
+      "n_estimators": 120,
+      "learning_rate": 0.04,
+      "max_depth": 4,
+      "min_child_weight": 2,
+      "subsample": 0.85,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 1.0,
+      "n_jobs": 1
+    },
+    "LightGBM": {
+      "n_estimators": 120,
+      "learning_rate": 0.04,
+      "num_leaves": 31,
+      "subsample": 0.85,
+      "colsample_bytree": 0.8,
+      "n_jobs": 1,
+      "deterministic": true,
+      "force_col_wise": true
+    },
+    "CatBoost": {
+      "iterations": 80,
+      "learning_rate": 0.04,
+      "depth": 6,
+      "l2_leaf_reg": 3.0,
+      "verbose": false,
+      "allow_writing_files": false,
+      "thread_count": 1
+    }
+  },
+  "feature_ablation_sets": {
+    "A": ["A_composition"],
+    "B": ["B_local_geometry"],
+    "C": ["C_local_chemistry"],
+    "D": ["D_occupancy_dopant_configuration"],
+    "A+B": ["A_composition", "B_local_geometry"],
+    "A+B+C": ["A_composition", "B_local_geometry", "C_local_chemistry"],
+    "A+B+C+D": ["A_composition", "B_local_geometry", "C_local_chemistry", "D_occupancy_dopant_configuration"],
+    "A+B+C+D+topology": ["A_composition", "B_local_geometry", "C_local_chemistry", "D_occupancy_dopant_configuration", "topology"]
+  },
+  "leakage_blocker": {
+    "forbidden_name_patterns": [
+      "barrier",
+      "target",
+      "predicted",
+      "prediction",
+      "mfpt",
+      "mean_free_passage",
+      "meanfreepassage",
+      "mean_first_passage",
+      "first_passage",
+      "random_walk",
+      "randomwalk",
+      "percolation",
+      "eperc",
+      "critical",
+      "criticality",
+      "topology",
+      "winding",
+      "periodic_dimensionality",
+      "redundancy_count",
+      "arrhenius",
+      "kinetic",
+      "diffusion_rate",
+      "conductivity",
+      "activation_energy",
+      "uncertainty",
+      "selection_score"
+    ],
+    "forbidden_metadata_features": [
+      "formula",
+      "reduced_formula",
+      "source_group",
+      "XC",
+      "bibtex",
+      "metadata_completeness",
+      "quality_flag",
+      "duplicate_group_id",
+      "crystal_class",
+      "space_group",
+      "sys_name",
+      "structure_ini_hash",
+      "structure_fin_hash",
+      "raw_record_sha256"
+    ],
+    "allowlist_only": true
+  },
+  "random_seeds": {
+    "base_seed": 20260807,
+    "derivation": "SHA256(base_seed, cohort, validation, feature_set, model, fold/context) -> 31-bit integer"
+  },
+  "outputs": {
+    "metrics_csv": "tables/revision_model_metrics.csv",
+    "oof_csv": "tables/revision_oof_predictions.csv",
+    "ablation_csv": "tables/revision_feature_ablation.csv",
+    "coverage_csv": "tables/revision_model_record_coverage.csv",
+    "strict_feature_csv": "tables/revision_source_data/revision_labeled_edge_features.csv",
+    "composition_feature_csv": "tables/revision_source_data/revision_composition_features_all619.csv",
+    "model_directory": "new_data/revision_models",
+    "log_directory": "logs"
+  }
+}
