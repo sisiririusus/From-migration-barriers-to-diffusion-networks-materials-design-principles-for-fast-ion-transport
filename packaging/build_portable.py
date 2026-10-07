@@ -91,7 +91,7 @@ def main():
 
     work = ROOT / "build" / "pyinstaller-work" / PLATFORM
     hidden = [
-        "joblib", "pandas", "numpy", "scipy", "scipy.special", "scipy.stats",
+        "ipaddress", "joblib", "pandas", "numpy", "scipy", "scipy.special", "scipy.stats",
         "sklearn", "sklearn.ensemble", "sklearn.tree", "sklearn.preprocessing",
         "sklearn.decomposition", "sklearn.model_selection", "sklearn.metrics",
         "ase.io.cif", "ase.io.vasp", "ase.spacegroup",
