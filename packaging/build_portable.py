@@ -79,7 +79,12 @@ def main():
         raise FileExistsError("Existing build is preserved: %s" % APP)
     if not MANIFEST.is_file():
         raise FileNotFoundError(MANIFEST)
+    from PyInstaller import compat as pyinstaller_compat
     from PyInstaller.__main__ import run
+    # CPython 3.9.21+ imports ipaddress from urllib.parse during PyInstaller's
+    # bootstrap. It must be in base_library.zip; a hidden import alone is too late.
+    if sys.version_info >= (3, 9, 21):
+        pyinstaller_compat.PY3_BASE_MODULES.add("ipaddress")
     import PyQt5
 
     qt_dir = Path(PyQt5.__file__).resolve().parent
