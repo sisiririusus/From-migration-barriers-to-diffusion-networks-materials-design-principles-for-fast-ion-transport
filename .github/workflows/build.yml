@@ -15,31 +15,48 @@ jobs:
             python: '3.7'
             requirements: packaging/requirements-windows.txt
             artifact: MigrationWorkbench-Windows
+            workdir: D:\mw
           - os: ubuntu-22.04
             python: '3.9'
             requirements: packaging/requirements-linux.txt
             artifact: MigrationWorkbench-Linux
+            workdir: .
     runs-on: ${{ matrix.os }}
     env:
       PYTHONPATH: src
       QT_QPA_PLATFORM: offscreen
     steps:
       - uses: actions/checkout@v4
+        if: runner.os != 'Windows'
+      - name: Check out at a short path on Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $destination = 'D:\mw'
+          git init $destination
+          git -C $destination remote add origin "https://github.com/$env:GITHUB_REPOSITORY.git"
+          git -C $destination -c core.longpaths=true fetch --depth=1 origin $env:GITHUB_SHA
+          git -C $destination -c core.longpaths=true checkout --force FETCH_HEAD
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
       - name: Install dependencies
+        working-directory: ${{ matrix.workdir }}
         run: |
           python -m pip install -r ${{ matrix.requirements }}
       - name: Scientific and language checks
+        working-directory: ${{ matrix.workdir }}
         run: python -m unittest discover -s tests -v
       - name: Build portable folder
+        working-directory: ${{ matrix.workdir }}
         run: python packaging/build_portable.py
       - name: Validate packaged app
+        working-directory: ${{ matrix.workdir }}
         run: python packaging/verify_portable.py
       - name: Package ZIP
+        working-directory: ${{ matrix.workdir }}
         run: python packaging/make_portable_zip.py
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact }}
-          path: release-assets/*.zip
+          path: ${{ matrix.workdir }}/release-assets/*.zip
