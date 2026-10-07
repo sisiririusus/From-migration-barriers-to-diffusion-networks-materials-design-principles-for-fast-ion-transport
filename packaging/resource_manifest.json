@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\scripts\\revision_core\\__init__.py",
+      "sha256": "f17d4af5e6f43c2ee2beeb2e1bb099450a691f437c4bb8d2aec4df68c5d489aa",
+      "bytes": 288
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\scripts\\revision_core\\data_governance.py",
+      "sha256": "54898ecbd78d026132cf709f79beb17f046c34dcdaeaa69f1b55b30d3103d40a",
+      "bytes": 40992
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\scripts\\revision_core\\barrier_features.py",
+      "sha256": "2047ec652e8756728a03947ef1b6decf925e5947f897d476dc3bb79b8c8b5c9d",
+      "bytes": 34034
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\scripts\\revision_core\\barrier_modeling.py",
+      "sha256": "ab3b976b2056572a7a1dcb1e0e3c15e7bcf1bc40f049091d84d1253bee119225",
+      "bytes": 24805
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\scripts\\revision_core\\element_properties.py",
+      "sha256": "b1bcd9329d3944a357691e61563cc1149858e1657090fe738a9136e95986dbe9",
+      "bytes": 5500
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\scripts\\revision_core\\periodic_trial.py",
+      "sha256": "8e1b6b9d76f0f57e91cf81990344fceeac115ad7767134c2f75632c32d2fbb76",
+      "bytes": 49757
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\scripts\\revision_core\\periodic_graph.py",
+      "sha256": "46184631ea6b8246095cf6b9840bb0c68a7219d6ab5f336eaede449bcaa1795a",
+      "bytes": 21477
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\scripts\\revision_core\\periodic_network_analysis.py",
+      "sha256": "1fcd808049e621dbafbebf4c15acdb3989a8a0aadbd520e9aecdd3c69890fe34",
+      "bytes": 21769
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\scripts\\revision_core\\uncertainty_calibration.py",
+      "sha256": "419b681539641db7f38fe07ba0a65e4ec6d3486a18582d84d633597f7a3dfe4b",
+      "bytes": 41060
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\config\\revision_model_config.yaml",
+      "sha256": "f7c22fd1b0397c1427591699345d4527d98a725f730ee3e21aa0d783a0b7cc92",
+      "bytes": 7277
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\new_data\\revision_models\\selected_barrier_model_pipeline.joblib",
+      "sha256": "7f2cdf24e8baf50094c9eee85d5aabef357e1695572278cd624b47f0d1d88ba3",
+      "bytes": 1796791
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\new_data\\revision_models\\revision_uncertainty_network\\full_strict_X_only_diversity_embedding.joblib",
+      "sha256": "8dd0b9a0d846aadf41dd6760897615aa8234403b6d9d46c383351402c9b09cee",
+      "bytes": 640600
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\new_data\\revision_models\\element_properties_manifest.json",
+      "sha256": "1f9f46330ba84c87b170f8ba00af5104dd758c1c441eaa117628535d9d3019cb",
+      "bytes": 1763
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\new_data\\revision_models\\element_properties_snapshot.csv",
+      "sha256": "e57a47a4cad5430346a0f98ced74f66504e4675dcfb3af0f862b813ab1fedd56",
+      "bytes": 3976
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\tables\\revision_periodic_network_metrics.csv",
+      "sha256": "687e41c0933362c0882821c965128148820c09630993e85b27b99313568108c6",
+      "bytes": 9164
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\tables\\revision_active_neb_candidates.csv",
+      "sha256": "ac99bdcd24d4775dc40ffe637e8e6d5315969d3618767e4acf767e1a00ccb65c",
+      "bytes": 124822
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\tables\\revision_source_data\\periodic_trial_nodes.csv",
+      "sha256": "d97bc1860428b43f88eaab4a425d8b4ca093511bff971cd584e203483cff9c39",
+      "bytes": 29366
+    },
+    {
+      "path": "science\\repro\\scripts\\reproduction\\project\\tables\\revision_source_data\\revision_periodic_oof_edge_predictions.csv",
+      "sha256": "8563920c22d4a35634fcd670ef4d7eac6d984b1d84c41acc26492117c2565ee4",
+      "bytes": 1113058
+    },
+    {
+      "path": "science\\extended_analysis\\tables\\tableS7_cross_composition_periodic_readouts.csv",
+      "sha256": "0c4d86967c765410f117fd3d315d5a422b20c40d1f625f037abce1ff64af6195",
+      "bytes": 6104
+    },
+    {
+      "path": "science\\extended_analysis\\source_snapshot\\current_tables\\revision_source_data\\figure67_nasicon_nodes.csv",
+      "sha256": "75f10a08eda62851fb38f831824fd26621e8a85b2e268c3a29e1f59477c74bb0",
+      "bytes": 16630
+    },
+    {
+      "path": "science\\extended_analysis\\source_snapshot\\current_tables\\revision_source_data\\figure67_nasicon_oof_candidate_predictions.csv",
+      "sha256": "df833e91a09c5037d309ed9616816288d3c6567075c229bca837e4b58fbe448b",
+      "bytes": 220500
+    },
+    {
+      "path": "science\\extended_analysis\\source_snapshot\\current_tables\\revision_source_data\\figure7_prospective_case_source.csv",
+      "sha256": "9e70111135c2ebfcd315c34904fd5219d3f4d4e3a0e62d462de331a0dff70fb5",
+      "bytes": 184536
+    },
+    {
+      "path": "examples\\user_path_project.json",
+      "sha256": "2eac922c4b3965feafa9f2ea7a8074512ddc11273394354f5a456bfcd7dfaf04",
+      "bytes": 4641
+    },
+    {
+      "path": "examples\\user_network_graph.json",
+      "sha256": "6068671381d15ab80093350f24384ddcfb2152ffbed3598c4ad626678e9e5b21",
+      "bytes": 787
+    },
+    {
+      "path": "examples\\user_path_structure.cif",
+      "sha256": "b8372f1d2d51b425ca072e5142a926bbdf0119582d6b69218d29c3bfdc01600b",
+      "bytes": 2224
+    },
+    {
+      "path": "examples\\user_path_structure.vasp",
+      "sha256": "2fdd1ef4283a6536a784b3231e2ee81628ceeb967c355e527363ec7cadea2e7b",
+      "bytes": 2087
+    },
+    {
+      "path": "examples\\user_network_nodes.csv",
+      "sha256": "7834a7e36d40a1a245684e80364d06757ced02dcba821df6ecd868a9a8f3eed1",
+      "bytes": 66
+    },
+    {
+      "path": "examples\\user_network_edges.csv",
+      "sha256": "0caa4034aa124a91de13f9c0e767709fd6f01687dc91aa3426dd0cd3fffb5bd9",
+      "bytes": 181
+    }
+  ]
+}
