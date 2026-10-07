@@ -1,0 +1,45 @@
+name: Build portable desktop packages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  portable:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-2022
+            python: '3.7'
+            requirements: packaging/requirements-windows.txt
+            artifact: MigrationWorkbench-Windows
+          - os: ubuntu-22.04
+            python: '3.9'
+            requirements: packaging/requirements-linux.txt
+            artifact: MigrationWorkbench-Linux
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONPATH: src
+      QT_QPA_PLATFORM: offscreen
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install dependencies
+        run: |
+          python -m pip install -r ${{ matrix.requirements }}
+      - name: Scientific and language checks
+        run: python -m unittest discover -s tests -v
+      - name: Build portable folder
+        run: python packaging/build_portable.py
+      - name: Validate packaged app
+        run: python packaging/verify_portable.py
+      - name: Package ZIP
+        run: python packaging/make_portable_zip.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: release-assets/*.zip
