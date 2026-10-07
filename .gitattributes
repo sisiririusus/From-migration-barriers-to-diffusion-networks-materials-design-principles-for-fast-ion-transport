@@ -1,0 +1,4 @@
+# Scientific resources are hash-checked at build time. Preserve their bytes on every OS.
+science/** -text
+examples/** -text
+*.joblib -text

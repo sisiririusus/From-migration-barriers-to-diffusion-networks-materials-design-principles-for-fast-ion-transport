@@ -1,0 +1,10 @@
+/build/
+/release-assets/
+/runs/
+/.venv/
+/.pytest_cache/
+__pycache__/
+*.py[cod]
+*.spec
+.DS_Store
+Thumbs.db
