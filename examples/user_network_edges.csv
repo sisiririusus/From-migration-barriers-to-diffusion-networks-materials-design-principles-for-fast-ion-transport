@@ -1,0 +1,3 @@
+﻿graph_id,edge_uid,node_i,node_j,image_shift_a,image_shift_b,image_shift_c,barrier_eV
+demo_2d_winding,a_loop,site0,site0,1,0,0,0.2
+demo_2d_winding,b_loop,site0,site0,0,1,0,0.3

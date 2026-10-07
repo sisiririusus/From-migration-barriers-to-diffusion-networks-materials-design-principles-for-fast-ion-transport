@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "kind": "periodic_graph",
+  "name": "二维周期图输入样例",
+  "graph_id": "demo_2d_winding",
+  "formula": "",
+  "migrating_species": "",
+  "nodes": [
+    {
+      "id": "site0",
+      "frac_coords": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "edge_uid": "a_loop",
+      "node_i": "site0",
+      "node_j": "site0",
+      "image_shift": [
+        1,
+        0,
+        0
+      ],
+      "barrier_eV": 0.2,
+      "barrier_source": "user_supplied"
+    },
+    {
+      "edge_uid": "b_loop",
+      "node_i": "site0",
+      "node_j": "site0",
+      "image_shift": [
+        0,
+        1,
+        0
+      ],
+      "barrier_eV": 0.3,
+      "barrier_source": "user_supplied"
+    }
+  ]
+}
